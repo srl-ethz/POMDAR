@@ -38,10 +38,10 @@ const TASKS = {
     group: "manipulation",
     description: "Vertical scaffold — rotate the wheel through increasing angle notches.",
     files: {
-      orca2: "v_wheel_2f_trimmed.mov",
-      orca3: "v_wheel_3f_trimmed.mov",
-      orca5: "v_wheel_5f_trimmed.mov",
-      orcafull: "v_wheel_5full_trimmed.mov",
+      orca2: "v_wheel_2f_trimmed.mp4",
+      orca3: "v_wheel_3f_trimmed.mp4",
+      orca5: "v_wheel_5f_trimmed.mp4",
+      orcafull: "v_wheel_5full_trimmed.mp4",
     },
   },
   V2: {
@@ -50,10 +50,10 @@ const TASKS = {
     group: "manipulation",
     description: "Vertical scaffold — thin stick rotation (precision grasp pattern).",
     files: {
-      orca2: "v_stick_2f_trimmed.mov",
-      orca3: "v_stick_3f_trimmed.mov",
-      orca5: "v_stick_5noabd_trimmed.mov",
-      orcafull: "v_stick_5full_trimmed.mov",
+      orca2: "v_stick_2f_trimmed.mp4",
+      orca3: "v_stick_3f_trimmed.mp4",
+      orca5: "v_stick_5noabd_trimmed.mp4",
+      orcafull: "v_stick_5full_trimmed.mp4",
     },
   },
   V3: {
@@ -62,10 +62,10 @@ const TASKS = {
     group: "manipulation",
     description: "Vertical scaffold — sphere / ball rotation.",
     files: {
-      orca2: "v_ball_2f_trimmed.mov",
-      orca3: "v_ball_3f_trimmed.mov",
-      orca5: "v_ball_5noabd_trimmed.mov",
-      orcafull: "v_ball_5full_triimmed.mov",
+      orca2: "v_ball_2f_trimmed.mp4",
+      orca3: "v_ball_3f_trimmed.mp4",
+      orca5: "v_ball_5noabd_trimmed.mp4",
+      orcafull: "v_ball_5full_triimmed.mp4",
     },
   },
   H1: {
@@ -74,8 +74,8 @@ const TASKS = {
     group: "manipulation",
     description: "Horizontal scaffold — scissors along curved rail.",
     files: {
-      orca2: "h_scissors_2f_trimmed.mov",
-      orcafull: "h_scissors_5full_trimmed.mov",
+      orca2: "h_scissors_2f_trimmed.mp4",
+      orcafull: "h_scissors_5full_trimmed.mp4",
     },
   },
   H2: {
@@ -84,7 +84,7 @@ const TASKS = {
     group: "manipulation",
     description: "Horizontal scaffold — chopsticks along curved rail.",
     files: {
-      orcafull: "h_chopsticks_5full_trimmed.mov",
+      orcafull: "h_chopsticks_5full_trimmed.mp4",
     },
   },
   H3: {
@@ -93,7 +93,7 @@ const TASKS = {
     group: "manipulation",
     description: "Horizontal scaffold — squeeze task.",
     files: {
-      orcafull: "h_squeeze_5full_trimmed.mov",
+      orcafull: "h_squeeze_5full_trimmed.mp4",
     },
   },
   H4: {
@@ -102,7 +102,7 @@ const TASKS = {
     group: "manipulation",
     description: "Horizontal scaffold — palmar grasp on shared object.",
     files: {
-      orcafull: "h_palmar_5full_trimmed.mov",
+      orcafull: "h_palmar_5full_trimmed.mp4",
     },
   },
   H5: {
@@ -111,8 +111,8 @@ const TASKS = {
     group: "manipulation",
     description: "Horizontal scaffold — precision pinch.",
     files: {
-      orca2: "h_pinch_2f_trimmed.mov",
-      orcafull: "h_pinch_5full_trimmed.mov",
+      orca2: "h_pinch_2f_trimmed.mp4",
+      orcafull: "h_pinch_5full_trimmed.mp4",
     },
   },
   C1: {
@@ -155,10 +155,10 @@ const TASKS = {
     group: "grasp",
     description: "Pure grasping — wheel object pick-up and relocation.",
     files: {
-      orca2: "g_wheel_2f_trimmed.mov",
-      orca3: "g_wheel_3f_trimmed.mov",
-      orca5: "g_wheel_5abd_trimmed.mov",
-      orcafull: "g_wheel_5full_trimmed.mov",
+      orca2: "g_wheel_2f_trimmed.mp4",
+      orca3: "g_wheel_3f_trimmed.mp4",
+      orca5: "g_wheel_5abd_trimmed.mp4",
+      orcafull: "g_wheel_5full_trimmed.mp4",
     },
   },
   G2: {
@@ -167,10 +167,10 @@ const TASKS = {
     group: "grasp",
     description: "Pure grasping — sphere.",
     files: {
-      orca2: "g_sphere_2f_trimmed.mov",
-      orca3: "g_sphere_3f_trimmed.mov",
-      orca5: "g_sphere_5noabd_trimmed.mov",
-      orcafull: "g_sphere_5full_trimmed.mov",
+      orca2: "g_sphere_2f_trimmed.mp4",
+      orca3: "g_sphere_3f_trimmed.mp4",
+      orca5: "g_sphere_5noabd_trimmed.mp4",
+      orcafull: "g_sphere_5full_trimmed.mp4",
     },
   },
   G3: {
@@ -180,9 +180,9 @@ const TASKS = {
     description: "Pure grasping — disk.",
     files: {
       orca2: "g_disk_2f_trimmed.mp4",
-      orca3: "g_disk_3f_trimmed.mov",
-      orca5: "g_disk_5noabd_trimmed.mov",
-      orcafull: "g_disk_5full_trimmed.mov",
+      orca3: "g_disk_3f_trimmed.mp4",
+      orca5: "g_disk_5noabd_trimmed.mp4",
+      orcafull: "g_disk_5full_trimmed.mp4",
     },
   },
   G4: {
@@ -191,10 +191,10 @@ const TASKS = {
     group: "grasp",
     description: "Pure grasping — small cylinder.",
     files: {
-      orca2: "g_csmall_2f_trimmed.mov",
-      orca3: "g_csmall_3f_trimmed.mov",
+      orca2: "g_csmall_2f_trimmed.mp4",
+      orca3: "g_csmall_3f_trimmed.mp4",
       orca5: "g_csmall_5noabd_trimmed.mp4",
-      orcafull: "g_csmall_5full_trimmed.mov",
+      orcafull: "g_csmall_5full_trimmed.mp4",
     },
   },
   G5: {
@@ -205,8 +205,8 @@ const TASKS = {
     files: {
       orca2: "g_cmedium_2f_trimmed.mp4",
       orca3: "g_cmedium_3f_trimmed.mp4",
-      orca5: "g_cmedium_5noabd_trimmed.mov",
-      orcafull: "g_cmedium_5full_trimmed.mov",
+      orca5: "g_cmedium_5noabd_trimmed.mp4",
+      orcafull: "g_cmedium_5full_trimmed.mp4",
     },
   },
   G6: {
@@ -215,10 +215,10 @@ const TASKS = {
     group: "grasp",
     description: "Pure grasping — large cylinder.",
     files: {
-      orca2: "g_clarge_2f_trimmed.mov",
-      orca3: "g_clarge_3f_trimmed.mov",
-      orca5: "g_clarge_5noabd_trimmed.mov",
-      orcafull: "g_clarge_5full_trimmed.mov",
+      orca2: "g_clarge_2f_trimmed.mp4",
+      orca3: "g_clarge_3f_trimmed.mp4",
+      orca5: "g_clarge_5noabd_trimmed.mp4",
+      orcafull: "g_clarge_5full_trimmed.mp4",
     },
   },
 };
