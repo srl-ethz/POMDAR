@@ -1,4 +1,4 @@
-/** Served as <code>website/videos/</code> → symlink to parent folder (keeps paths valid on GitHub Pages and local servers). */
+/** Task clips live under <code>videos/</code> (see <code>POMDAR/docs/videos/</code> on Pages). Local preview: <code>website/videos</code> → <code>../POMDAR/docs/videos</code>. */
 const VIDEO_BASE = "videos/";
 
 function videoSrc(file) {
