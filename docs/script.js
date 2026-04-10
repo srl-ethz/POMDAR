@@ -28,8 +28,8 @@ const TASKS = {
     group: "manipulation",
     description: "Continuous rotation — fidget mechanism with geared transmission.",
     files: {
-      orca3: "c_fidget_3f_trimmed.mov",
-      orcafull: "c_fidget_5full_trimmed.mov",
+      orca3: "c_fidget_3f_trimmed.mp4",
+      orcafull: "c_fidget_5full_trimmed.mp4",
     },
   },
   V1: {
@@ -121,8 +121,8 @@ const TASKS = {
     group: "manipulation",
     description: "Continuous rotation — threaded insert removal.",
     files: {
-      orca2: "c_thread_2f_trimmed.mov",
-      orcafull: "c_thread_5full_trimmed.mov",
+      orca2: "c_thread_2f_trimmed.mp4",
+      orcafull: "c_thread_5full_trimmed.mp4",
     },
   },
   C2: {
@@ -131,10 +131,10 @@ const TASKS = {
     group: "manipulation",
     description: "Continuous rotation — stick with gravity clutch.",
     files: {
-      orca2: "c_stick_2f_trimmed.mov",
-      orca3: "c_stick_3f_trimmed.mov",
-      orca5: "c_stick_5noabd_trimmed.mov",
-      orcafull: "c_stick_5full_trimmed.mov",
+      orca2: "c_stick_2f_trimmed.mp4",
+      orca3: "c_stick_3f_trimmed.mp4",
+      orca5: "c_stick_5noabd_trimmed.mp4",
+      orcafull: "c_stick_5full_trimmed.mp4",
     },
   },
   C3: {
@@ -143,10 +143,10 @@ const TASKS = {
     group: "manipulation",
     description: "Continuous rotation — wheel with clutch (file uses “whell” spelling).",
     files: {
-      orca2: "c_wheel_2f_trimmed.mov",
-      orca3: "c_wheel_3f_trimmed.mov",
-      orca5: "c_whell_5noabd_trimmed.mov",
-      orcafull: "c_wheel_5full_trimmed.mov",
+      orca2: "c_wheel_2f_trimmed.mp4",
+      orca3: "c_wheel_3f_trimmed.mp4",
+      orca5: "c_whell_5noabd_trimmed.mp4",
+      orcafull: "c_wheel_5full_trimmed.mp4",
     },
   },
   G1: {
@@ -179,7 +179,7 @@ const TASKS = {
     group: "grasp",
     description: "Pure grasping — disk.",
     files: {
-      orca2: "g_disk_2f_trimmed.mov",
+      orca2: "g_disk_2f_trimmed.mp4",
       orca3: "g_disk_3f_trimmed.mov",
       orca5: "g_disk_5noabd_trimmed.mov",
       orcafull: "g_disk_5full_trimmed.mov",
@@ -193,7 +193,7 @@ const TASKS = {
     files: {
       orca2: "g_csmall_2f_trimmed.mov",
       orca3: "g_csmall_3f_trimmed.mov",
-      orca5: "g_csmall_5noabd_trimmed.mov",
+      orca5: "g_csmall_5noabd_trimmed.mp4",
       orcafull: "g_csmall_5full_trimmed.mov",
     },
   },
@@ -203,8 +203,8 @@ const TASKS = {
     group: "grasp",
     description: "Pure grasping — medium cylinder.",
     files: {
-      orca2: "g_cmedium_2f_trimmed.mov",
-      orca3: "g_cmedium_3f_trimmed.mov",
+      orca2: "g_cmedium_2f_trimmed.mp4",
+      orca3: "g_cmedium_3f_trimmed.mp4",
       orca5: "g_cmedium_5noabd_trimmed.mov",
       orcafull: "g_cmedium_5full_trimmed.mov",
     },
