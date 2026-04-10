@@ -230,7 +230,8 @@ const EMB_LABELS = {
   orcafull: "orca_full",
 };
 
-const ORDER_MANIP = ["C4", "V1", "V2", "V3", "H1", "H2", "H3", "H4", "H5", "C1", "C2", "C3"];
+/** Manipulation task chips: vertical (V), horizontal (H), continuous (C), then C4 fidget last. */
+const ORDER_MANIP = ["V1", "V2", "V3", "H1", "H2", "H3", "H4", "H5", "C1", "C2", "C3", "C4"];
 const ORDER_GRASP = ["G1", "G2", "G3", "G4", "G5", "G6"];
 
 function renderTaskChips() {
@@ -340,10 +341,10 @@ function setupTaskInteraction() {
     });
   });
 
-  const first = document.querySelector(".task-chip[data-task-id='C4']") || document.querySelector(".task-chip");
-  if (first instanceof HTMLButtonElement) {
-    first.classList.add("is-active");
-    renderTaskPanel(first.dataset.taskId || "V1");
+  const defaultVideo = document.querySelector(".task-chip[data-task-id='V1']") || document.querySelector(".task-chip");
+  if (defaultVideo instanceof HTMLButtonElement) {
+    defaultVideo.classList.add("is-active");
+    renderTaskPanel(defaultVideo.dataset.taskId || "V1");
   }
 }
 
