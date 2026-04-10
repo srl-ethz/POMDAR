@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Benchmark of Dexterity for Anthropomorphic Robotic Hands</title>
+    <meta
+      name="description"
+      content="POMDAR: a compact, fully 3D-printable benchmark for quantitative evaluation of anthropomorphic robotic hand dexterity."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="theme-color" content="#ffffff" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("pomdar-theme");
+          var mode = t === "dark" ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", mode);
+          document.documentElement.style.colorScheme = mode === "dark" ? "dark" : "light";
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="theme-bar">
+      <button type="button" class="btn theme-toggle" id="themeToggle" aria-pressed="false">
+        Dark mode
+      </button>
+    </div>
+    <header class="hero section reveal" id="top">
+      <h1>A Benchmark of Dexterity for Anthropomorphic Robotic Hands</h1>
+      <p class="authors">
+        Davide Liconti<sup>*</sup>, Yuning Zhou<sup>*</sup>, Yasunori Toshimitsu, Ronan Hinchet, Robert K. Katzschmann
+      </p>
+      <p class="affiliations">*Equal contribution · Soft Robotics Lab, D-MAVT, ETH Zurich</p>
+
+      <div class="actions" aria-label="Resources">
+        <a class="btn btn-solid" href="assets/pomdar.pdf" target="_blank" rel="noreferrer">PDF</a>
+        <span class="btn btn-soon" title="Coming soon">CAD (soon)</span>
+        <span class="btn btn-soon" title="Coming soon">Code (soon)</span>
+        <a class="btn" href="#interactive-sim">Interactive sim</a>
+        <a class="btn" href="#citation">BibTeX</a>
+      </div>
+
+      <p class="lead">
+        POMDAR is a <b>taxonomy-grounded dexterity benchmark</b> for anthropomorphic hands. It formalizes dexterity as
+        <b>task throughput</b> (correctness and speed) across vertical, horizontal, continuous-rotation, and pure-grasping
+        configurations—implemented in the real world and in simulation.
+      </p>
+    </header>
+
+    <main>
+      <section class="section reveal" id="abstract">
+        <p class="abstract">
+          Dexterity is central to anthropomorphic hands, but inconsistent definitions make comparisons across designs
+          difficult. <b>POMDAR</b> is a benchmark that treats dexterity as <b>task performance</b> over manipulation and
+          grasping motions grounded in established motor-control taxonomies. Mechanical scaffolding constrains motion,
+          limits compensatory strategies, and yields unambiguous metrics. Scores combine task correctness and speed against
+          a human baseline; the protocol is open and standardized for reproducible comparison of dexterous platforms.
+        </p>
+        <figure class="figure figure--teaser">
+          <div class="media">
+            <img
+              src="assets/teaser_reworked_p1.png"
+              alt="POMDAR benchmark overview: four manipulation configurations and quantitative evaluation across ORCA embodiments"
+              loading="lazy"
+            />
+          </div>
+          <p class="fig-caption">Fig. 1 (teaser). Four manipulation configurations and embodiment study overview.</p>
+        </figure>
+        <div class="intro-text">
+          <p class="lead" style="margin-top: 0">
+            Anthropomorphic hands are judged by kinematic proxies as often as by real manipulation outcomes. POMDAR
+            instead follows a <b>performance-based</b> paradigm: the benchmark tasks are traceable to manipulation and
+            grasp taxonomies, and scores reflect <b>what the hand actually achieves</b> on contact-rich interactions—not
+            only workspace or DoF counts.
+          </p>
+          <ul class="bullets">
+            <li><b>Representative tasks</b> grounded in Elliott &amp; Connolly, Ma &amp; Dollar, and Feix et al. (GRASP).</li>
+            <li><b>Reproducible hardware</b>: consumer 3D printing, shared components across tasks, compact footprint.</li>
+            <li><b>Observable motions</b> via scaffolding that limits unintended arm/wrist compensation.</li>
+            <li><b>Throughput score</b>: weighted combination of correctness (0.8) and speed vs. human baseline (0.2).</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section reveal" id="benchmark">
+        <h2>Benchmark construction</h2>
+        <p class="abstract" style="margin-top: 0">
+          Tasks consolidate overlapping taxonomy entries into a practical set: <b>12 manipulation</b> patterns (vertical,
+          horizontal, and continuous rotation) and <b>6 pure grasping</b> tasks. Vertical and horizontal setups use
+          scaffolded rails and notches; continuous tasks use a gravity-based clutch; grasping tasks isolate pick-up and
+          relocation without external supports.
+        </p>
+        <div class="cards">
+          <article class="card">
+            <h3>Vertical (V1–V3)</h3>
+            <p>Wheel, stick, and sphere: progress through discrete notches while maintaining in-hand control.</p>
+          </article>
+          <article class="card">
+            <h3>Horizontal (H1–H5)</h3>
+            <p>Scissors, chopsticks, squeeze, palmar, pinch: translation along curved rails with increasing difficulty.</p>
+          </article>
+          <article class="card">
+            <h3>Continuous (C1–C4)</h3>
+            <p>Thread, stick, wheel, fidget: sustained rotation using the clutch and geared mechanisms.</p>
+          </article>
+          <article class="card">
+            <h3>Grasping (G1–G6)</h3>
+            <p>Wheel, sphere, disk, and three cylinder sizes—relocation in free space to test grasp quality.</p>
+          </article>
+        </div>
+
+        <figure class="figure" style="margin-top: 1.25rem">
+          <div class="media">
+            <img
+              src="assets/benchmark_overview_p1.png"
+              alt="POMDAR task configurations: vertical, horizontal, continuous rotation, and grasping panels"
+              loading="lazy"
+            />
+          </div>
+          <p class="fig-caption">Benchmark apparatus and task configurations (overview figure).</p>
+        </figure>
+      </section>
+
+      <section class="section reveal" id="interactive-sim">
+        <h2>Interactive simulation</h2>
+        <p class="abstract" style="margin-top: 0">
+          Explore <b>MuJoCo</b> models of the benchmark objects in your browser: orbit the camera, pause, and drag bodies to
+          apply forces. The first load downloads the physics engine and meshes and may take a few seconds.
+        </p>
+        <p class="subtle" style="margin-bottom: 0.75rem">
+          <a href="mujoco/index.html" target="_blank" rel="noreferrer">Open the viewer full screen</a>
+        </p>
+        <div class="sim-embed-wrap">
+          <iframe
+            class="sim-embed-frame"
+            title="POMDAR MuJoCo benchmark viewer"
+            src="mujoco/index.html"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="section reveal" id="results">
+        <h2>Teleoperation Results</h2>
+        <p class="abstract" style="text-align: center; max-width: 85ch; margin-left: auto; margin-right: auto">
+          Real-world experiments teleoperate <b>ORCA</b> hand embodiments (2-, 3-, 5-finger without abduction, and full
+          16-DoF) on a Franka arm using Rokoko motion-capture gloves. Radar plots summarize per-task scores for each
+          embodiment (manipulation and grasp panels). <b>Click a task</b> below to watch representative teleoperation clips.
+        </p>
+
+        <div class="results-layout">
+          <div class="results-figure-wrap">
+            <img
+              src="assets/results_legend_p1.png"
+              alt="POMDAR results: ORCA embodiments and radar plots for manipulation and grasp tasks"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="task-toolbar">
+            <div>
+              <div class="task-group-label">Manipulation tasks (Fig.&nbsp;6B)</div>
+              <div class="task-chips" id="task-chips-manip"></div>
+            </div>
+            <div>
+              <div class="task-group-label">Grasp tasks (Fig.&nbsp;6C)</div>
+              <div class="task-chips" id="task-chips-grasp"></div>
+            </div>
+          </div>
+
+          <div class="task-panel" id="task-panel" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="citation">
+        <h2>Citation</h2>
+        <pre id="bibtex">@article{liconti2026pomdar,
+  title={A Benchmark of Dexterity for Anthropomorphic Robotic Hands},
+  author={Liconti, Davide and Zhou, Yuning and Toshimitsu, Yasunori and Hinchet, Ronan and Katzschmann, Robert K.},
+  journal={arXiv preprint},
+  year={2026}
+}</pre>
+        <button id="copyBibtex" class="btn btn-solid" type="button">Copy BibTeX</button>
+        <p class="subtle" style="margin-top: 1rem; text-align: center">
+          Replace the BibTeX entry with the final venue information when available.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <p class="footer-logo">
+        <a href="https://srl.ethz.ch/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/srl_logo.png" alt="Soft Robotics Lab, ETH Zurich" loading="lazy" />
+        </a>
+      </p>
+      <p class="subtle"><a href="#top">Back to top</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

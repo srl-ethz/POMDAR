@@ -1,0 +1,42 @@
+# GitHub Pages from the /docs folder with real Git LFS files.
+# Branch-only deploy serves LFS *pointer* files in the browser; this workflow
+# checks out with LFS and uploads the actual meshes/videos.
+
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (with Git LFS binaries)
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

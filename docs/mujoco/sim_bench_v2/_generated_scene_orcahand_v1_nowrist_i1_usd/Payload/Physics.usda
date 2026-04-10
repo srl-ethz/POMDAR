@@ -1,0 +1,1436 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "MuJoCo USD Converter v0.1.0a4"
+    }
+    defaultPrim = "sim_pomdar_scene"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "sim_pomdar_scene"
+{
+    def Scope "Physics"
+    {
+        def Material "PhysicsMaterial" (
+            prepend apiSchemas = ["PhysicsMaterialAPI", "MjcMaterialAPI"]
+        )
+        {
+            float physics:dynamicFriction = 1
+        }
+
+        def Material "PhysicsMaterial_1" (
+            prepend apiSchemas = ["PhysicsMaterialAPI", "MjcMaterialAPI"]
+        )
+        {
+            uniform double mjc:rollingfriction = 0.001
+            float physics:dynamicFriction = 1
+        }
+
+        def MjcActuator "hand_root_tx"
+        {
+            uniform double[] mjc:biasPrm = [0, -300, 1, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 5
+            uniform double mjc:ctrlRange:min = -5
+            uniform double[] mjc:gainPrm = [300, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_tx>
+        }
+
+        def MjcActuator "hand_root_ty"
+        {
+            uniform double[] mjc:biasPrm = [0, -300, 1, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 5
+            uniform double mjc:ctrlRange:min = -5
+            uniform double[] mjc:gainPrm = [300, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_ty>
+        }
+
+        def MjcActuator "hand_root_tz"
+        {
+            uniform double[] mjc:biasPrm = [0, -300, 1, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 5
+            uniform double mjc:ctrlRange:min = -5
+            uniform double[] mjc:gainPrm = [300, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_tz>
+        }
+
+        def MjcActuator "hand_root_roll"
+        {
+            uniform double[] mjc:biasPrm = [0, -300, 1, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 6.2
+            uniform double mjc:ctrlRange:min = -6.2
+            uniform double[] mjc:gainPrm = [300, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_roll>
+        }
+
+        def MjcActuator "hand_root_pitch"
+        {
+            uniform double[] mjc:biasPrm = [0, -300, 1, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 6.2
+            uniform double mjc:ctrlRange:min = -6.2
+            uniform double[] mjc:gainPrm = [300, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_pitch>
+        }
+
+        def MjcActuator "hand_root_yaw"
+        {
+            uniform double[] mjc:biasPrm = [0, -300, 1, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 6.2
+            uniform double mjc:ctrlRange:min = -6.2
+            uniform double[] mjc:gainPrm = [300, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/hand_root_yaw>
+        }
+
+        def MjcActuator "root2thumb_base"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 0.8377580409572782
+            uniform double mjc:ctrlRange:min = -0.9250245035569946
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/thumb_base/root2thumb_base>
+        }
+
+        def MjcActuator "thumb_base2pp"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 0.7853981633974483
+            uniform double mjc:ctrlRange:min = -0.7853981633974483
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/thumb_base/thumb_pp/thumb_base2pp>
+        }
+
+        def MjcActuator "thumb_pp2mp"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 2.007128639793479
+            uniform double mjc:ctrlRange:min = -0.3490658503988659
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/thumb_base/thumb_pp/thumb_mp/thumb_pp2mp>
+        }
+
+        def MjcActuator "thumb_mp2dp"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 1.7453292519943295
+            uniform double mjc:ctrlRange:min = -0.3490658503988659
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/thumb_base/thumb_pp/thumb_mp/thumb_dp/thumb_mp2dp>
+        }
+
+        def MjcActuator "index_abd"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 0.5235987755982988
+            uniform double mjc:ctrlRange:min = -0.5235987755982988
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/index_um/index_abd>
+        }
+
+        def MjcActuator "root2index_pp"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 1.9198621771937625
+            uniform double mjc:ctrlRange:min = -0.3490658503988659
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/index_um/index_pp/root2index_pp>
+        }
+
+        def MjcActuator "index_pp2mp"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 2.2689280275926285
+            uniform double mjc:ctrlRange:min = -0.3490658503988659
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/index_um/index_pp/index_mp/index_pp2mp>
+        }
+
+        def MjcActuator "middle_abd"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 0.5235987755982988
+            uniform double mjc:ctrlRange:min = -0.5235987755982988
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/middle_um/middle_abd>
+        }
+
+        def MjcActuator "root2middle_pp"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 1.9198621771937625
+            uniform double mjc:ctrlRange:min = -0.3490658503988659
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/middle_um/middle_pp/root2middle_pp>
+        }
+
+        def MjcActuator "middle_pp2mp"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 2.2689280275926285
+            uniform double mjc:ctrlRange:min = -0.3490658503988659
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/middle_um/middle_pp/middle_mp/middle_pp2mp>
+        }
+
+        def MjcActuator "ring_abd"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 0.5235987755982988
+            uniform double mjc:ctrlRange:min = -0.5235987755982988
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/ring_um/ring_abd>
+        }
+
+        def MjcActuator "root2ring_pp"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 1.9198621771937625
+            uniform double mjc:ctrlRange:min = -0.3490658503988659
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/ring_um/ring_pp/root2ring_pp>
+        }
+
+        def MjcActuator "ring_pp2mp"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 2.2689280275926285
+            uniform double mjc:ctrlRange:min = -0.3490658503988659
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/ring_um/ring_pp/ring_mp/ring_pp2mp>
+        }
+
+        def MjcActuator "pinky_abd"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 0.5235987755982988
+            uniform double mjc:ctrlRange:min = -0.5235987755982988
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/pinky_um/pinky_abd>
+        }
+
+        def MjcActuator "root2pinky_pp"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 1.9198621771937625
+            uniform double mjc:ctrlRange:min = -0.3490658503988659
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/pinky_um/pinky_pp/root2pinky_pp>
+        }
+
+        def MjcActuator "pinky_pp2mp"
+        {
+            uniform double[] mjc:biasPrm = [0, -1, 0, 0, 0, 0, 0, 0, 0, 0]
+            uniform token mjc:biasType = "affine"
+            uniform double mjc:ctrlRange:max = 2.2689280275926285
+            uniform double mjc:ctrlRange:min = -0.3490658503988659
+            rel mjc:target = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/pinky_um/pinky_pp/pinky_mp/pinky_pp2mp>
+        }
+    }
+
+    def "Geometry"
+    {
+        over "floor" (
+            prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "MaterialBindingAPI"]
+        )
+        {
+            rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+        }
+
+        def "root" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsArticulationRootAPI"]
+        )
+        {
+            def PhysicsFixedJoint "PhysicsFixedJoint"
+            {
+                rel physics:body0 = </sim_pomdar_scene>
+                rel physics:body1 = </sim_pomdar_scene/Geometry/root>
+                point3f physics:localPos0 = (0.3, 0.02, 0.3)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (0.7071068, -0.7071067, 0, 0)
+                quatf physics:localRot1 = (1, 0, 0, 0)
+            }
+
+            def "wrist_root" (
+                prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+            )
+            {
+                def PhysicsFixedJoint "PhysicsFixedJoint"
+                {
+                    rel physics:body0 = </sim_pomdar_scene/Geometry/root>
+                    rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root>
+                    point3f physics:localPos0 = (0.03862891, 0.0014412499, 0.1410904)
+                    point3f physics:localPos1 = (0, 0, 0)
+                    quatf physics:localRot0 = (1, 0, 0, 0)
+                    quatf physics:localRot1 = (1, 0, 0, 0)
+                }
+
+                def "hand_root_tx_body" (
+                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                )
+                {
+                    point3f physics:centerOfMass = (0, 0, 0)
+                    float3 physics:diagonalInertia = (0.01, 0.01, 0.01)
+                    float physics:mass = 0.1
+                    quatf physics:principalAxes = (1, 0, 0, 0)
+
+                    def PhysicsPrismaticJoint "hand_root_tx" (
+                        prepend apiSchemas = ["MjcJointAPI"]
+                    )
+                    {
+                        uniform double mjc:armature = 1
+                        uniform double mjc:damping = 1
+                        uniform double mjc:frictionloss = 0.001
+                        uniform double mjc:margin = 0.01
+                        uniform token physics:axis = "X"
+                        rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root>
+                        rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body>
+                        point3f physics:localPos0 = (5.551115e-17, 0, 0)
+                        point3f physics:localPos1 = (0, 0, 0)
+                        quatf physics:localRot0 = (1, 0, 0, 0)
+                        quatf physics:localRot1 = (1, 0, 0, 0)
+                        float physics:lowerLimit = -5
+                        float physics:upperLimit = 5
+                    }
+
+                    def "hand_root_ty_body" (
+                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                    )
+                    {
+                        point3f physics:centerOfMass = (0, 0, 0)
+                        float3 physics:diagonalInertia = (0.01, 0.01, 0.01)
+                        float physics:mass = 0.1
+                        quatf physics:principalAxes = (1, 0, 0, 0)
+
+                        def PhysicsPrismaticJoint "hand_root_ty" (
+                            prepend apiSchemas = ["MjcJointAPI"]
+                        )
+                        {
+                            uniform double mjc:armature = 1
+                            uniform double mjc:damping = 1
+                            uniform double mjc:frictionloss = 0.001
+                            uniform double mjc:margin = 0.01
+                            uniform token physics:axis = "Y"
+                            rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body>
+                            rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body>
+                            point3f physics:localPos0 = (5.551115e-17, 0, 0)
+                            point3f physics:localPos1 = (0, 0, 0)
+                            quatf physics:localRot0 = (0, -1, 0, 0)
+                            quatf physics:localRot1 = (0, -1, 0, 0)
+                            float physics:lowerLimit = -5
+                            float physics:upperLimit = 5
+                        }
+
+                        def "hand_root_tz_body" (
+                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                        )
+                        {
+                            point3f physics:centerOfMass = (0, 0, 0)
+                            float3 physics:diagonalInertia = (0.01, 0.01, 0.01)
+                            float physics:mass = 0.1
+                            quatf physics:principalAxes = (1, 0, 0, 0)
+
+                            def PhysicsPrismaticJoint "hand_root_tz" (
+                                prepend apiSchemas = ["MjcJointAPI"]
+                            )
+                            {
+                                uniform double mjc:armature = 1
+                                uniform double mjc:damping = 1
+                                uniform double mjc:frictionloss = 0.001
+                                uniform double mjc:margin = 0.01
+                                uniform token physics:axis = "Z"
+                                rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body>
+                                rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body>
+                                point3f physics:localPos0 = (5.551115e-17, 0, 0)
+                                point3f physics:localPos1 = (0, 0, 0)
+                                quatf physics:localRot0 = (1, 0, 0, 0)
+                                quatf physics:localRot1 = (1, 0, 0, 0)
+                                float physics:lowerLimit = -5
+                                float physics:upperLimit = 5
+                            }
+
+                            def "hand_root_roll_body" (
+                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                            )
+                            {
+                                point3f physics:centerOfMass = (0, 0, 0)
+                                float3 physics:diagonalInertia = (0.01, 0.01, 0.01)
+                                float physics:mass = 0.1
+                                quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                def PhysicsRevoluteJoint "hand_root_roll" (
+                                    prepend apiSchemas = ["MjcJointAPI"]
+                                )
+                                {
+                                    uniform double mjc:armature = 1
+                                    uniform double mjc:damping = 1
+                                    uniform double mjc:frictionloss = 0.001
+                                    uniform double mjc:margin = 0.01
+                                    uniform token physics:axis = "X"
+                                    rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body>
+                                    rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body>
+                                    point3f physics:localPos0 = (5.551115e-17, 0, 0)
+                                    point3f physics:localPos1 = (0, 0, 0)
+                                    quatf physics:localRot0 = (1, 0, 0, 0)
+                                    quatf physics:localRot1 = (1, 0, 0, 0)
+                                    float physics:lowerLimit = -355.23383
+                                    float physics:upperLimit = 355.23383
+                                }
+
+                                def "hand_root_pitch_body" (
+                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                )
+                                {
+                                    point3f physics:centerOfMass = (0, 0, 0)
+                                    float3 physics:diagonalInertia = (0.01, 0.01, 0.01)
+                                    float physics:mass = 0.1
+                                    quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                    def PhysicsRevoluteJoint "hand_root_pitch" (
+                                        prepend apiSchemas = ["MjcJointAPI"]
+                                    )
+                                    {
+                                        uniform double mjc:armature = 1
+                                        uniform double mjc:damping = 1
+                                        uniform double mjc:frictionloss = 0.001
+                                        uniform double mjc:margin = 0.01
+                                        uniform token physics:axis = "Y"
+                                        rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body>
+                                        rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body>
+                                        point3f physics:localPos0 = (5.551115e-17, 0, 0)
+                                        point3f physics:localPos1 = (0, 0, 0)
+                                        quatf physics:localRot0 = (0, -1, 0, 0)
+                                        quatf physics:localRot1 = (0, -1, 0, 0)
+                                        float physics:lowerLimit = -355.23383
+                                        float physics:upperLimit = 355.23383
+                                    }
+
+                                    def "hand_root_yaw_body" (
+                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                    )
+                                    {
+                                        point3f physics:centerOfMass = (0, 0, 0)
+                                        float3 physics:diagonalInertia = (0.01, 0.01, 0.01)
+                                        float physics:mass = 0.1
+                                        quatf physics:principalAxes = (1, 0, 0, 0)
+
+                                        def PhysicsRevoluteJoint "hand_root_yaw" (
+                                            prepend apiSchemas = ["MjcJointAPI"]
+                                        )
+                                        {
+                                            uniform double mjc:armature = 1
+                                            uniform double mjc:damping = 1
+                                            uniform double mjc:frictionloss = 0.001
+                                            uniform double mjc:margin = 0.01
+                                            uniform token physics:axis = "Z"
+                                            rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body>
+                                            rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body>
+                                            point3f physics:localPos0 = (5.551115e-17, 0, 0)
+                                            point3f physics:localPos1 = (0, 0, 0)
+                                            quatf physics:localRot0 = (1, 0, 0, 0)
+                                            quatf physics:localRot1 = (1, 0, 0, 0)
+                                            float physics:lowerLimit = -355.23383
+                                            float physics:upperLimit = 355.23383
+                                        }
+
+                                        def "palm" (
+                                            prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                        )
+                                        {
+                                            over "CarpalsAssembly" (
+                                                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                            )
+                                            {
+                                                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                uniform double mjc:margin = 0.0005
+                                                uniform token physics:approximation = "convexHull"
+                                            }
+
+                                            def PhysicsFixedJoint "PhysicsFixedJoint"
+                                            {
+                                                rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body>
+                                                rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm>
+                                                point3f physics:localPos0 = (5.551115e-17, 0, 0.07)
+                                                point3f physics:localPos1 = (0, 0, 0)
+                                                quatf physics:localRot0 = (1, 0, 0, 0)
+                                                quatf physics:localRot1 = (1, 0, 0, 0)
+                                            }
+
+                                            def "thumb_base" (
+                                                prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                            )
+                                            {
+                                                over "tn__TTPAssembly_jG4" (
+                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                )
+                                                {
+                                                    rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                    uniform double mjc:margin = 0.0005
+                                                    uniform token physics:approximation = "convexHull"
+                                                }
+
+                                                def PhysicsRevoluteJoint "root2thumb_base" (
+                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                )
+                                                {
+                                                    uniform double mjc:armature = 0.001
+                                                    uniform double mjc:damping = 0.1
+                                                    uniform double mjc:frictionloss = 0.001
+                                                    uniform double mjc:margin = 0.01
+                                                    uniform token physics:axis = "Z"
+                                                    rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm>
+                                                    rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/thumb_base>
+                                                    point3f physics:localPos0 = (-0.026596228, 0.01246761, -0.0137313185)
+                                                    point3f physics:localPos1 = (0.017, 6.852158e-17, 2.7301512e-14)
+                                                    quatf physics:localRot0 = (-0.30673832, 0.7354125, -0.60414, 0.00974439)
+                                                    quatf physics:localRot1 = (1, 0, 0, 0)
+                                                    float physics:lowerLimit = -53
+                                                    float physics:upperLimit = 48
+                                                }
+
+                                                def "thumb_pp" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                )
+                                                {
+                                                    over "tn__TAPAssembly_jG4" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                    )
+                                                    {
+                                                        rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                        uniform double mjc:margin = 0.0005
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    def PhysicsRevoluteJoint "thumb_base2pp" (
+                                                        prepend apiSchemas = ["MjcJointAPI"]
+                                                    )
+                                                    {
+                                                        uniform double mjc:armature = 0.001
+                                                        uniform double mjc:damping = 0.1
+                                                        uniform double mjc:frictionloss = 0.001
+                                                        uniform double mjc:margin = 0.01
+                                                        uniform token physics:axis = "X"
+                                                        rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/thumb_base>
+                                                        rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/thumb_base/thumb_pp>
+                                                        point3f physics:localPos0 = (-2.7755576e-17, -0.0066902433, -0.0003066937)
+                                                        point3f physics:localPos1 = (0.03, 0.002, 0.0063916678)
+                                                        quatf physics:localRot0 = (0.4055798, 0.579228, -0.579228, -0.40557978)
+                                                        quatf physics:localRot1 = (0.70710677, 0, -0.66446304, 0.24184477)
+                                                        float physics:lowerLimit = -45
+                                                        float physics:upperLimit = 45
+                                                    }
+
+                                                    def "thumb_mp" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                    )
+                                                    {
+                                                        over "tn__PPPAssembly_jG4" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                        )
+                                                        {
+                                                            rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                            uniform double mjc:margin = 0.0005
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+
+                                                        def PhysicsRevoluteJoint "thumb_pp2mp" (
+                                                            prepend apiSchemas = ["MjcJointAPI"]
+                                                        )
+                                                        {
+                                                            uniform double mjc:armature = 0.001
+                                                            uniform double mjc:damping = 0.1
+                                                            uniform double mjc:frictionloss = 0.001
+                                                            uniform double mjc:margin = 0.01
+                                                            uniform token physics:axis = "Y"
+                                                            rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/thumb_base/thumb_pp>
+                                                            rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/thumb_base/thumb_pp/thumb_mp>
+                                                            point3f physics:localPos0 = (8.326673e-17, 1.8041124e-16, 0)
+                                                            point3f physics:localPos1 = (-0, -0, -0)
+                                                            quatf physics:localRot0 = (0.70710677, -1.637579e-15, 0.70710677, 5.551115e-16)
+                                                            quatf physics:localRot1 = (-1.2767565e-15, -1, 4.9960036e-16, 0)
+                                                            float physics:lowerLimit = -20
+                                                            float physics:upperLimit = 115
+                                                        }
+
+                                                        def "thumb_dp" (
+                                                            prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                        )
+                                                        {
+                                                            over "ThumbTipAssembly" (
+                                                                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                            )
+                                                            {
+                                                                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                                uniform double mjc:margin = 0.0005
+                                                                uniform token physics:approximation = "convexHull"
+                                                            }
+
+                                                            def PhysicsRevoluteJoint "thumb_mp2dp" (
+                                                                prepend apiSchemas = ["MjcJointAPI"]
+                                                            )
+                                                            {
+                                                                uniform double mjc:armature = 0.001
+                                                                uniform double mjc:damping = 0.1
+                                                                uniform double mjc:frictionloss = 0.001
+                                                                uniform double mjc:margin = 0.01
+                                                                uniform token physics:axis = "Y"
+                                                                rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/thumb_base/thumb_pp/thumb_mp>
+                                                                rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/thumb_base/thumb_pp/thumb_mp/thumb_dp>
+                                                                point3f physics:localPos0 = (0.0005, 2.359224e-16, 0.033)
+                                                                point3f physics:localPos1 = (-0, -0, 0)
+                                                                quatf physics:localRot0 = (-1.769418e-16, -1, 2.7755576e-16, 1.3877788e-17)
+                                                                quatf physics:localRot1 = (-1.3877788e-16, -1, 1.6653345e-16, 0)
+                                                                float physics:lowerLimit = -20
+                                                                float physics:upperLimit = 100
+                                                            }
+
+                                                            def "thumb_fingertip" (
+                                                                prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                            )
+                                                            {
+                                                                def PhysicsFixedJoint "PhysicsFixedJoint"
+                                                                {
+                                                                    rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/thumb_base/thumb_pp/thumb_mp/thumb_dp>
+                                                                    rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/thumb_base/thumb_pp/thumb_mp/thumb_dp/thumb_fingertip>
+                                                                    point3f physics:localPos0 = (0, -1.3877788e-17, 0.03)
+                                                                    point3f physics:localPos1 = (0, 0, 0)
+                                                                    quatf physics:localRot0 = (1, 0, 0, 0)
+                                                                    quatf physics:localRot1 = (1, 0, 0, 0)
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            def "index_um" (
+                                                prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                            )
+                                            {
+                                                over "tn__APAssembly_WF" (
+                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                )
+                                                {
+                                                    rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                    uniform double mjc:margin = 0.0005
+                                                    uniform token physics:approximation = "convexHull"
+                                                }
+
+                                                def PhysicsRevoluteJoint "index_abd" (
+                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                )
+                                                {
+                                                    uniform double mjc:armature = 0.001
+                                                    uniform double mjc:damping = 0.1
+                                                    uniform double mjc:frictionloss = 0.001
+                                                    uniform double mjc:margin = 0.01
+                                                    uniform token physics:axis = "Z"
+                                                    rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm>
+                                                    rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/index_um>
+                                                    point3f physics:localPos0 = (-0.024091784, 0.0019042816, 0.02516068)
+                                                    point3f physics:localPos1 = (0.02, -2.3852448e-18, 4.3368087e-19)
+                                                    quatf physics:localRot0 = (0.61338216, -0.57129693, 0.40749556, 0.36239418)
+                                                    quatf physics:localRot1 = (9.992007e-16, -1, 4.1633363e-17, 0)
+                                                    float physics:lowerLimit = -30
+                                                    float physics:upperLimit = 30
+                                                }
+
+                                                def "index_pp" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                )
+                                                {
+                                                    over "tn__IPPAssembly_jG4" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                    )
+                                                    {
+                                                        rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                        uniform double mjc:margin = 0.0005
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    def PhysicsRevoluteJoint "root2index_pp" (
+                                                        prepend apiSchemas = ["MjcJointAPI"]
+                                                    )
+                                                    {
+                                                        uniform double mjc:armature = 0.001
+                                                        uniform double mjc:damping = 0.1
+                                                        uniform double mjc:frictionloss = 0.001
+                                                        uniform double mjc:margin = 0.01
+                                                        uniform token physics:axis = "Y"
+                                                        rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/index_um>
+                                                        rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/index_um/index_pp>
+                                                        point3f physics:localPos0 = (-9.7144515e-17, 0, 5.551115e-17)
+                                                        point3f physics:localPos1 = (-8.628646e-18, 1.0557908e-17, 2.5541056e-17)
+                                                        quatf physics:localRot0 = (9.992007e-16, 0.7071068, -7.771561e-16, 0.7071067)
+                                                        quatf physics:localRot1 = (-1.110223e-15, -1, -8.326673e-17, 0)
+                                                        float physics:lowerLimit = -20
+                                                        float physics:upperLimit = 110
+                                                    }
+
+                                                    def "index_mp" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                    )
+                                                    {
+                                                        over "FingerTipAssembly" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                        )
+                                                        {
+                                                            rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                            uniform double mjc:margin = 0.0005
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+
+                                                        def PhysicsRevoluteJoint "index_pp2mp" (
+                                                            prepend apiSchemas = ["MjcJointAPI"]
+                                                        )
+                                                        {
+                                                            uniform double mjc:armature = 0.001
+                                                            uniform double mjc:damping = 0.1
+                                                            uniform double mjc:frictionloss = 0.001
+                                                            uniform double mjc:margin = 0.01
+                                                            uniform token physics:axis = "Y"
+                                                            rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/index_um/index_pp>
+                                                            rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/index_um/index_pp/index_mp>
+                                                            point3f physics:localPos0 = (0.0005, 1.110223e-16, 0.038)
+                                                            point3f physics:localPos1 = (-4.506563e-18, 5.8953586e-17, 6.4874015e-17)
+                                                            quatf physics:localRot0 = (-1.110223e-15, -1, -5.551115e-17, -1.110223e-16)
+                                                            quatf physics:localRot1 = (-1.110223e-15, -1, -8.326673e-17, 0)
+                                                            float physics:lowerLimit = -20
+                                                            float physics:upperLimit = 130
+                                                        }
+
+                                                        def "index_fingertip" (
+                                                            prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                        )
+                                                        {
+                                                            def PhysicsFixedJoint "PhysicsFixedJoint"
+                                                            {
+                                                                rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/index_um/index_pp/index_mp>
+                                                                rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/index_um/index_pp/index_mp/index_fingertip>
+                                                                point3f physics:localPos0 = (-0.009, 5.551115e-17, 0.04)
+                                                                point3f physics:localPos1 = (0, 0, 0)
+                                                                quatf physics:localRot0 = (1, 0, 0, 0)
+                                                                quatf physics:localRot1 = (1, 0, 0, 0)
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            def "pinky_um" (
+                                                prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                            )
+                                            {
+                                                over "tn__APAssembly_WF" (
+                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                )
+                                                {
+                                                    rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                    uniform double mjc:margin = 0.0005
+                                                    uniform token physics:approximation = "convexHull"
+                                                }
+
+                                                def PhysicsRevoluteJoint "pinky_abd" (
+                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                )
+                                                {
+                                                    uniform double mjc:armature = 0.001
+                                                    uniform double mjc:damping = 0.1
+                                                    uniform double mjc:frictionloss = 0.001
+                                                    uniform double mjc:margin = 0.01
+                                                    uniform token physics:axis = "Z"
+                                                    rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm>
+                                                    rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/pinky_um>
+                                                    point3f physics:localPos0 = (0.042587683, 0.0049919253, 0.007247739)
+                                                    point3f physics:localPos1 = (0.02, 2.4286129e-17, 6.071532e-18)
+                                                    quatf physics:localRot0 = (-0.22390383, 0.36739433, -0.62373894, -0.6525628)
+                                                    quatf physics:localRot1 = (-5.551115e-16, -1, 1.9428903e-16, 0)
+                                                    float physics:lowerLimit = -30
+                                                    float physics:upperLimit = 30
+                                                }
+
+                                                def "pinky_pp" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                )
+                                                {
+                                                    over "tn__PPPAssembly_jG4" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                    )
+                                                    {
+                                                        rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                        uniform double mjc:margin = 0.0005
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    def PhysicsRevoluteJoint "root2pinky_pp" (
+                                                        prepend apiSchemas = ["MjcJointAPI"]
+                                                    )
+                                                    {
+                                                        uniform double mjc:armature = 0.001
+                                                        uniform double mjc:damping = 0.1
+                                                        uniform double mjc:frictionloss = 0.001
+                                                        uniform double mjc:margin = 0.01
+                                                        uniform token physics:axis = "Y"
+                                                        rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/pinky_um>
+                                                        rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/pinky_um/pinky_pp>
+                                                        point3f physics:localPos0 = (-1.110223e-16, 1.3877788e-17, 0)
+                                                        point3f physics:localPos1 = (3.4409773e-18, 3.9175277e-17, 1.06471234e-16)
+                                                        quatf physics:localRot0 = (-2.7755576e-16, -0.7071068, -4.9960036e-16, -0.7071067)
+                                                        quatf physics:localRot1 = (-1.6653345e-16, -1, -2.220446e-16, 0)
+                                                        float physics:lowerLimit = -20
+                                                        float physics:upperLimit = 110
+                                                    }
+
+                                                    def "pinky_mp" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                    )
+                                                    {
+                                                        over "FingerTipAssembly" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                        )
+                                                        {
+                                                            rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                            uniform double mjc:margin = 0.0005
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+
+                                                        def PhysicsRevoluteJoint "pinky_pp2mp" (
+                                                            prepend apiSchemas = ["MjcJointAPI"]
+                                                        )
+                                                        {
+                                                            uniform double mjc:armature = 0.001
+                                                            uniform double mjc:damping = 0.1
+                                                            uniform double mjc:frictionloss = 0.001
+                                                            uniform double mjc:margin = 0.01
+                                                            uniform token physics:axis = "Y"
+                                                            rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/pinky_um/pinky_pp>
+                                                            rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/pinky_um/pinky_pp/pinky_mp>
+                                                            point3f physics:localPos0 = (0.0005, 2.7755576e-17, 0.033)
+                                                            point3f physics:localPos1 = (-4.6305314e-18, -3.7088373e-17, -3.145407e-17)
+                                                            quatf physics:localRot0 = (-2.7755576e-16, -1, -2.4980018e-16, 0)
+                                                            quatf physics:localRot1 = (-2.7755576e-16, -1, -2.4980018e-16, 0)
+                                                            float physics:lowerLimit = -20
+                                                            float physics:upperLimit = 130
+                                                        }
+
+                                                        def "pinky_fingertip" (
+                                                            prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                        )
+                                                        {
+                                                            def PhysicsFixedJoint "PhysicsFixedJoint"
+                                                            {
+                                                                rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/pinky_um/pinky_pp/pinky_mp>
+                                                                rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/pinky_um/pinky_pp/pinky_mp/pinky_fingertip>
+                                                                point3f physics:localPos0 = (-0.009, 1.3877788e-17, 0.04)
+                                                                point3f physics:localPos1 = (0, 0, 0)
+                                                                quatf physics:localRot0 = (1, 0, 0, 0)
+                                                                quatf physics:localRot1 = (1, 0, 0, 0)
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            def "middle_um" (
+                                                prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                            )
+                                            {
+                                                over "tn__APAssembly_WF" (
+                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                )
+                                                {
+                                                    rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                    uniform double mjc:margin = 0.0005
+                                                    uniform token physics:approximation = "convexHull"
+                                                }
+
+                                                def PhysicsRevoluteJoint "middle_abd" (
+                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                )
+                                                {
+                                                    uniform double mjc:armature = 0.001
+                                                    uniform double mjc:damping = 0.1
+                                                    uniform double mjc:frictionloss = 0.001
+                                                    uniform double mjc:margin = 0.01
+                                                    uniform token physics:axis = "Z"
+                                                    rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm>
+                                                    rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/middle_um>
+                                                    point3f physics:localPos0 = (5.551115e-17, 5.551115e-17, 0.03)
+                                                    point3f physics:localPos1 = (0.02, 3.7713567e-18, -1.7016957e-18)
+                                                    quatf physics:localRot0 = (0.5, -0.5, 0.5, 0.5)
+                                                    quatf physics:localRot1 = (-1.6653345e-16, -1, -9.645057e-31, 0)
+                                                    float physics:lowerLimit = -30
+                                                    float physics:upperLimit = 30
+                                                }
+
+                                                def "middle_pp" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                )
+                                                {
+                                                    over "tn__MPPAssembly_jG4" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                    )
+                                                    {
+                                                        rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                        uniform double mjc:margin = 0.0005
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    def PhysicsRevoluteJoint "root2middle_pp" (
+                                                        prepend apiSchemas = ["MjcJointAPI"]
+                                                    )
+                                                    {
+                                                        uniform double mjc:armature = 0.001
+                                                        uniform double mjc:damping = 0.1
+                                                        uniform double mjc:frictionloss = 0.001
+                                                        uniform double mjc:margin = 0.01
+                                                        uniform token physics:axis = "Y"
+                                                        rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/middle_um>
+                                                        rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/middle_um/middle_pp>
+                                                        point3f physics:localPos0 = (-5.551115e-17, 0, 0)
+                                                        point3f physics:localPos1 = (8.0118686e-32, 1.0477059e-31, 8.326673e-17)
+                                                        quatf physics:localRot0 = (1.110223e-16, -0.7071068, 5.551115e-17, -0.7071067)
+                                                        quatf physics:localRot1 = (1.110223e-16, -1, -2.7755576e-17, 0)
+                                                        float physics:lowerLimit = -20
+                                                        float physics:upperLimit = 110
+                                                    }
+
+                                                    def "middle_mp" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                    )
+                                                    {
+                                                        over "FingerTipAssembly" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                        )
+                                                        {
+                                                            rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                            uniform double mjc:margin = 0.0005
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+
+                                                        def PhysicsRevoluteJoint "middle_pp2mp" (
+                                                            prepend apiSchemas = ["MjcJointAPI"]
+                                                        )
+                                                        {
+                                                            uniform double mjc:armature = 0.001
+                                                            uniform double mjc:damping = 0.1
+                                                            uniform double mjc:frictionloss = 0.001
+                                                            uniform double mjc:margin = 0.01
+                                                            uniform token physics:axis = "Y"
+                                                            rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/middle_um/middle_pp>
+                                                            rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/middle_um/middle_pp/middle_mp>
+                                                            point3f physics:localPos0 = (0.0005, 0, 0.046)
+                                                            point3f physics:localPos1 = (5.421011e-19, 1.016891e-31, 8.326673e-17)
+                                                            quatf physics:localRot0 = (1.110223e-16, -1, 0, -5.551115e-17)
+                                                            quatf physics:localRot1 = (1.110223e-16, -1, -2.7755576e-17, 0)
+                                                            float physics:lowerLimit = -20
+                                                            float physics:upperLimit = 130
+                                                        }
+
+                                                        def "middle_fingertip" (
+                                                            prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                        )
+                                                        {
+                                                            def PhysicsFixedJoint "PhysicsFixedJoint"
+                                                            {
+                                                                rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/middle_um/middle_pp/middle_mp>
+                                                                rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/middle_um/middle_pp/middle_mp/middle_fingertip>
+                                                                point3f physics:localPos0 = (-0.009, 0, 0.04)
+                                                                point3f physics:localPos1 = (0, 0, 0)
+                                                                quatf physics:localRot0 = (1, 0, 0, 0)
+                                                                quatf physics:localRot1 = (1, 0, 0, 0)
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            def "ring_um" (
+                                                prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                            )
+                                            {
+                                                over "tn__APAssembly_WF" (
+                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                )
+                                                {
+                                                    rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                    uniform double mjc:margin = 0.0005
+                                                    uniform token physics:approximation = "convexHull"
+                                                }
+
+                                                def PhysicsRevoluteJoint "ring_abd" (
+                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                )
+                                                {
+                                                    uniform double mjc:armature = 0.001
+                                                    uniform double mjc:damping = 0.1
+                                                    uniform double mjc:frictionloss = 0.001
+                                                    uniform double mjc:margin = 0.01
+                                                    uniform token physics:axis = "Z"
+                                                    rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm>
+                                                    rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/ring_um>
+                                                    point3f physics:localPos0 = (0.021516263, 0.0015399648, 0.020821936)
+                                                    point3f physics:localPos1 = (0.02, -4.6403853e-17, 5.421011e-18)
+                                                    quatf physics:localRot0 = (-0.41326916, 0.44719633, -0.551844, -0.5698177)
+                                                    quatf physics:localRot1 = (-1.110223e-16, -1, 2.0816682e-16, 0)
+                                                    float physics:lowerLimit = -30
+                                                    float physics:upperLimit = 30
+                                                }
+
+                                                def "ring_pp" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                )
+                                                {
+                                                    over "tn__MPPAssembly_jG4" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                    )
+                                                    {
+                                                        rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                        uniform double mjc:margin = 0.0005
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    def PhysicsRevoluteJoint "root2ring_pp" (
+                                                        prepend apiSchemas = ["MjcJointAPI"]
+                                                    )
+                                                    {
+                                                        uniform double mjc:armature = 0.001
+                                                        uniform double mjc:damping = 0.1
+                                                        uniform double mjc:frictionloss = 0.001
+                                                        uniform double mjc:margin = 0.01
+                                                        uniform token physics:axis = "Y"
+                                                        rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/ring_um>
+                                                        rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/ring_um/ring_pp>
+                                                        point3f physics:localPos0 = (5.551115e-17, -5.551115e-17, 5.551115e-17)
+                                                        point3f physics:localPos1 = (-6.2474863e-19, 2.7821224e-17, -5.0004226e-17)
+                                                        quatf physics:localRot0 = (-2.220446e-16, -0.7071068, -2.220446e-16, -0.7071067)
+                                                        quatf physics:localRot1 = (0, -1, -5.551115e-17, 0)
+                                                        float physics:lowerLimit = -20
+                                                        float physics:upperLimit = 110
+                                                    }
+
+                                                    def "ring_mp" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                    )
+                                                    {
+                                                        over "FingerTipAssembly" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "MaterialBindingAPI"]
+                                                        )
+                                                        {
+                                                            rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial_1>
+                                                            uniform double mjc:margin = 0.0005
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+
+                                                        def PhysicsRevoluteJoint "ring_pp2mp" (
+                                                            prepend apiSchemas = ["MjcJointAPI"]
+                                                        )
+                                                        {
+                                                            uniform double mjc:armature = 0.001
+                                                            uniform double mjc:damping = 0.1
+                                                            uniform double mjc:frictionloss = 0.001
+                                                            uniform double mjc:margin = 0.01
+                                                            uniform token physics:axis = "Y"
+                                                            rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/ring_um/ring_pp>
+                                                            rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/ring_um/ring_pp/ring_mp>
+                                                            point3f physics:localPos0 = (0.0005, -1.110223e-16, 0.046)
+                                                            point3f physics:localPos1 = (-6.5371803e-18, -1.5935858e-17, 1.6822041e-16)
+                                                            quatf physics:localRot0 = (5.551115e-17, -1, -5.551115e-17, 0)
+                                                            quatf physics:localRot1 = (0, -1, -5.551115e-17, 0)
+                                                            float physics:lowerLimit = -20
+                                                            float physics:upperLimit = 130
+                                                        }
+
+                                                        def "ring_fingertip" (
+                                                            prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+                                                        )
+                                                        {
+                                                            def PhysicsFixedJoint "PhysicsFixedJoint"
+                                                            {
+                                                                rel physics:body0 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/ring_um/ring_pp/ring_mp>
+                                                                rel physics:body1 = </sim_pomdar_scene/Geometry/root/wrist_root/hand_root_tx_body/hand_root_ty_body/hand_root_tz_body/hand_root_roll_body/hand_root_pitch_body/hand_root_yaw_body/palm/ring_um/ring_pp/ring_mp/ring_fingertip>
+                                                                point3f physics:localPos0 = (-0.009, -5.551115e-17, 0.04)
+                                                                point3f physics:localPos1 = (0, 0, 0)
+                                                                quatf physics:localRot0 = (1, 0, 0, 0)
+                                                                quatf physics:localRot1 = (1, 0, 0, 0)
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        def "vertical_base" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+        )
+        {
+            over "Cylinder" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_2" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_3" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_4" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_5" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_6" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_7" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_8" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_9" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_10" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_11" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_12" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_13" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_14" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_15" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_16" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_17" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_18" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_19" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            over "Box_20" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 3
+                float physics:density = 248
+            }
+
+            def PhysicsFixedJoint "PhysicsFixedJoint"
+            {
+                rel physics:body0 = </sim_pomdar_scene>
+                rel physics:body1 = </sim_pomdar_scene/Geometry/vertical_base>
+                point3f physics:localPos0 = (0, 0, 0)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (1, 0, 0, 0)
+                quatf physics:localRot1 = (1, 0, 0, 0)
+            }
+        }
+
+        def "disk_rod" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+        )
+        {
+            over "round_disk" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMeshCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform token physics:approximation = "convexHull"
+                float physics:mass = 0.05
+            }
+
+            over "Cylinder" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                float physics:density = 248
+            }
+
+            over "Cylinder_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                uniform int mjc:group = 2
+                bool physics:collisionEnabled = 0
+                float physics:mass = 0.05
+            }
+
+            over "Box" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                float physics:density = 248
+            }
+
+            def PhysicsPrismaticJoint "disk_rod_slide_joint" (
+                prepend apiSchemas = ["MjcJointAPI"]
+            )
+            {
+                uniform double mjc:damping = 100
+                uniform token physics:axis = "Z"
+                rel physics:body0 = </sim_pomdar_scene>
+                rel physics:body1 = </sim_pomdar_scene/Geometry/disk_rod>
+                point3f physics:localPos0 = (0, 0, 0.233)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (1, 0, 0, 0)
+                quatf physics:localRot1 = (1, 0, 0, 0)
+                float physics:lowerLimit = -0.01
+                float physics:upperLimit = 1
+            }
+
+            def PhysicsRevoluteJoint "disk_rod_hinge_joint" (
+                prepend apiSchemas = ["MjcJointAPI"]
+            )
+            {
+                uniform token physics:axis = "Z"
+                rel physics:body0 = </sim_pomdar_scene>
+                rel physics:body1 = </sim_pomdar_scene/Geometry/disk_rod>
+                point3f physics:localPos0 = (0, 0, 0.233)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (1, 0, 0, 0)
+                quatf physics:localRot1 = (1, 0, 0, 0)
+            }
+        }
+
+        def "table_body" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI"]
+        )
+        {
+            over "table_top" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                float physics:mass = 10
+            }
+
+            over "leg1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                float physics:density = 700
+            }
+
+            over "leg2" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                float physics:density = 700
+            }
+
+            over "leg3" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                float physics:density = 700
+            }
+
+            over "leg4" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "MjcCollisionAPI", "PhysicsMassAPI", "MaterialBindingAPI"]
+            )
+            {
+                rel material:binding:physics = </sim_pomdar_scene/Physics/PhysicsMaterial>
+                float physics:density = 700
+            }
+
+            def PhysicsFixedJoint "PhysicsFixedJoint"
+            {
+                rel physics:body0 = </sim_pomdar_scene>
+                rel physics:body1 = </sim_pomdar_scene/Geometry/table_body>
+                point3f physics:localPos0 = (0, 0, -0.02)
+                point3f physics:localPos1 = (0, 0, 0)
+                quatf physics:localRot0 = (1, 0, 0, 0)
+                quatf physics:localRot1 = (1, 0, 0, 0)
+            }
+        }
+    }
+}
+
+def PhysicsScene "PhysicsScene" (
+    prepend apiSchemas = ["MjcSceneAPI"]
+)
+{
+    uniform token mjc:compiler:angle = "radian"
+    uniform token mjc:compiler:inertiaFromGeom = "true"
+    uniform token mjc:option:cone = "elliptic"
+    uniform double mjc:option:impratio = 2
+    uniform token mjc:option:integrator = "implicitfast"
+    uniform int mjc:option:iterations = 200
+    uniform double mjc:option:timestep = 0.001
+    uniform double mjc:option:tolerance = 1e-10
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 9.81
+}
+
