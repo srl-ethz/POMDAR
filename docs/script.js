@@ -6,13 +6,6 @@ function videoSrc(file) {
   return VIDEO_BASE + file;
 }
 
-function videoMimeType(file) {
-  const lower = file.toLowerCase();
-  if (lower.endsWith(".mp4")) return "video/mp4";
-  if (lower.endsWith(".webm")) return "video/webm";
-  return "video/quicktime";
-}
-
 const EMB = {
   orca2: "videos/embodiments/orca_2.png",
   orca3: "videos/embodiments/orca_3.png",
@@ -283,15 +276,14 @@ function renderTaskPanel(taskId) {
           </div>
           <div class="video-crop">
             <video
+              src="${src}"
               controls
               playsinline
               preload="metadata"
               muted
               autoplay
               loop
-            >
-              <source src="${src}" type="${videoMimeType(file)}" />
-            </video>
+            ></video>
           </div>
         </div>
       `;
