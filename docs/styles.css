@@ -284,6 +284,30 @@ h3 {
   vertical-align: middle;
 }
 
+.media video {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+.media--pdf {
+  padding: 0;
+  line-height: 0;
+}
+
+.pdf-embed {
+  width: 100%;
+  min-height: 68vh;
+  border: 0;
+  display: block;
+  background: var(--media-bg);
+}
+
+.pdf-embed--tall {
+  min-height: 85vh;
+}
+
 #overview .media img {
   max-height: min(78vh, 820px);
   object-fit: contain;

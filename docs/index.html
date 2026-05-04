@@ -44,6 +44,13 @@
 
       <div class="actions" aria-label="Resources">
         <a class="btn btn-solid" href="assets/pomdar.pdf" target="_blank" rel="noreferrer">PDF</a>
+        <a
+          class="btn"
+          href="https://arxiv.org/abs/2604.09294"
+          target="_blank"
+          rel="noopener noreferrer"
+          >arXiv</a
+        >
         <span class="btn btn-soon" title="Coming soon">CAD (soon)</span>
         <span class="btn btn-soon" title="Coming soon">Code (soon)</span>
         <a class="btn" href="#interactive-sim">Interactive sim</a>
@@ -120,14 +127,17 @@
         </div>
 
         <figure class="figure" style="margin-top: 1.25rem">
-          <div class="media">
-            <img
-              src="assets/benchmark_overview_p1.png"
-              alt="POMDAR task configurations: vertical, horizontal, continuous rotation, and grasping panels"
-              loading="lazy"
-            />
+          <div class="media media--pdf">
+            <iframe
+              class="pdf-embed"
+              title="POMDAR benchmark overview (PDF)"
+              src="assets/benchmark_overview_colored.pdf#view=FitH"
+            ></iframe>
           </div>
-          <p class="fig-caption">Benchmark apparatus and task configurations (overview figure).</p>
+          <p class="fig-caption">
+            Benchmark apparatus and task configurations (overview).
+            <a href="assets/benchmark_overview_colored.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+          </p>
         </figure>
       </section>
 
@@ -161,8 +171,8 @@
         <div class="results-layout">
           <div class="results-figure-wrap">
             <img
-              src="assets/results_legend_p1.png"
-              alt="POMDAR results: ORCA embodiments and radar plots for manipulation and grasp tasks"
+              src="assets/results_figure6.jpg"
+              alt="POMDAR teleoperation results: ORCA embodiments (2–16 DoF) and radar plots for manipulation (C, V, H) and grasping (G) tasks"
               loading="lazy"
             />
           </div>
@@ -187,13 +197,51 @@
         <pre id="bibtex">@article{liconti2026pomdar,
   title={A Benchmark of Dexterity for Anthropomorphic Robotic Hands},
   author={Liconti, Davide and Zhou, Yuning and Toshimitsu, Yasunori and Hinchet, Ronan and Katzschmann, Robert K.},
-  journal={arXiv preprint},
+  journal={arXiv preprint arXiv:2604.09294},
   year={2026}
 }</pre>
         <button id="copyBibtex" class="btn btn-solid" type="button">Copy BibTeX</button>
         <p class="subtle" style="margin-top: 1rem; text-align: center">
           Replace the BibTeX entry with the final venue information when available.
         </p>
+      </section>
+
+      <section class="section reveal" id="taxonomy">
+        <h2>Task taxonomy</h2>
+        <p class="abstract" style="margin-top: 0; max-width: 85ch; margin-left: auto; margin-right: auto">
+          POMDAR tasks map to the families shown in the paper figures: <b>C</b> (continuous rotation: thread, stick,
+          wheel, fidget), <b>V</b> (vertical scaffold: wheel, stick, sphere), <b>H</b> (horizontal scaffold: scissors,
+          chopsticks, squeeze, palmar, pinch), and <b>G</b> (free grasping: wheel, sphere, disk, and three cylinder
+          sizes). The results figure above compares ORCA embodiments on these taxonomy cells.
+        </p>
+        <figure class="figure" style="margin-top: 1rem">
+          <div class="media media--pdf">
+            <iframe
+              class="pdf-embed pdf-embed--tall"
+              title="POMDAR task taxonomy (PDF)"
+              src="assets/taxonomy_spaced.pdf#view=FitH"
+            ></iframe>
+          </div>
+          <p class="fig-caption">
+            Taxonomy layout (paper Fig.&nbsp;6 style).
+            <a href="assets/taxonomy_spaced.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+          </p>
+        </figure>
+      </section>
+
+      <section class="section reveal" id="video">
+        <h2>Benchmark in motion</h2>
+        <p class="abstract" style="margin-top: 0; text-align: center; max-width: 75ch; margin-left: auto; margin-right: auto">
+          Clip from our supplementary video (1&nbsp;minute excerpt, 0:37–1:37).
+        </p>
+        <figure class="figure">
+          <div class="media">
+            <video controls playsinline preload="metadata" src="assets/pomdar_ral_clip.mp4"></video>
+          </div>
+          <p class="fig-caption">
+            <a href="assets/pomdar_ral_clip.mp4" download>Download clip</a>
+          </p>
+        </figure>
       </section>
     </main>
 
